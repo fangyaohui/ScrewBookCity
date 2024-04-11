@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Utils" />
+        <module name="UserService" />
+        <module name="ScrewBookCity" />
+        <module name="Gateway" />
+        <module name="SearchService" />
+        <module name="BookService" />
+        <module name="OrderService" />
+        <module name="PaymentService" />
+        <module name="Common" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BookService" options="-parameters" />
+      <module name="Common" options="-parameters" />
+      <module name="Gateway" options="-parameters" />
+      <module name="OrderService" options="-parameters" />
+      <module name="PaymentService" options="-parameters" />
+      <module name="SearchService" options="-parameters" />
+      <module name="UserService" options="-parameters" />
+      <module name="Utils" options="-parameters" />
+    </option>
+  </component>
+</project>

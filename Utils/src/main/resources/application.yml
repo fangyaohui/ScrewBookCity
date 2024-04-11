@@ -1,0 +1,22 @@
+
+
+
+spring:
+  application:
+    name: utilsearch
+
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: fang
+    password: 123456
+    virtual-host: /fang
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+
+server:
+  port: 8084

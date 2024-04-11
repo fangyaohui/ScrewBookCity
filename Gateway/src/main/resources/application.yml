@@ -1,0 +1,47 @@
+
+
+spring:
+  application:
+    name: gateway
+
+  cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false
+
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:8080"
+            allowedMethods:
+              - "GET"
+              - "POST"
+              - "DELETE"
+              - "PUT"
+              - "OPTIONS"
+            allowedHeaders: "*"
+            allowedCredentials: true
+            maxAge: 360000
+      routes:
+        - id: loginservice
+          uri: lb://userservice
+          predicates:
+            - Path=/login/**,/register/**,/sign/**
+        - id: bookservice
+          uri: lb://bookservice
+          predicates:
+            - Path=/book/**,/cart/**
+#
+#    gateway:
+#      enabled: true
+
+
+server:
+  port: 8081
+

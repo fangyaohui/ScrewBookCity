@@ -1,0 +1,34 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: bookservice
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 8 #最大连接
+        max-idle: 8 #最大空闲连接
+        min-idle: 0 #最小空闲连接
+        max-wait: 5000ms #连接等待时间
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/book?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
